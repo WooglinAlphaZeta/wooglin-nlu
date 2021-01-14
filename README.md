@@ -1,9 +1,9 @@
 <p>
   <img src="https://i.imgur.com/YR94laL.jpg" alt="Wooglin bot logo" width="800"></img>
 </p>
-# Wooglin-Bot
+
 ***
-Table of contents
+### Table of Contents
 
 * [Introduction](#Introduction)
 * [Documentation](#Documentation)
