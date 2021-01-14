@@ -1,5 +1,7 @@
-<img src="https://pbs.twimg.com/profile_images/1040408608067018752/yFS8LZve_400x400.jpg" alt="Wooglin logo" width="200" height="200"></img>
-# Wooglin
+<p>
+  <img src="https://i.imgur.com/YR94laL.jpg" alt="Wooglin bot logo" width="800"></img>
+</p>
+# Wooglin-Bot
 ***
 Table of contents
 
@@ -8,7 +10,7 @@ Table of contents
 * [Technicals](#Technicals)
 ***
 ### Introduction
-Hello there and welcome to Wooglin. Wooglin is a slack bot used in the executive board workspace of my fraternity. Wooglin helps to manage mass communication through SMS, Chapter attendance and standing tracking, and specified SMS communications as necessary.
+Woolgin Bot is the code powering the Wooglin Slack Bot that lives in the Slack workspace of the Alpha Zeta chapter of Beta Theta Pi. Wooglin helps to manage mass communication through SMS, Chapter attendance and standing tracking, and specified SMS communications as necessary, by utilizing a stand-alone api, Wooglin API. 
 
 ***
 ### Documentation
@@ -31,4 +33,4 @@ The following outlines the go-to phrasing that the bot has been trained on exces
 
 ***
 ### Technicals
-Wooglin physically is a series of python scripts zipped up and stored in an S3 bucket. The script triggers when Wooglin's API sends a POST request to AWS Lambda. The bot uses AWS DynamoDB for storage. To send text messages, Wooglin uses the Twilio SMS API. For general Natural Language Processing, Wooglin uses Wit.ai's NLP engine. 
+Update needed. Wooglin physically is a series of python scripts zipped up and stored in an S3 bucket. The script triggers when Wooglin's API sends a POST request to AWS Lambda. The bot uses AWS DynamoDB for storage. To send text messages, Wooglin uses the Twilio SMS API. For general Natural Language Processing, Wooglin uses Wit.ai's NLP engine. 
