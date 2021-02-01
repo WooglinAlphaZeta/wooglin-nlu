@@ -110,7 +110,7 @@ jobs:
             }
           event: fail
 
-  build-test-deploy:
+  build-and-deploy:
     machine: true
     steps:
       - checkout
@@ -256,9 +256,9 @@ jobs:
           event: fail
 
 workflows:
-  main:
+  build-test-and-deploy:
     jobs:
       - test-bot
-      - build-test-deploy
-        requires:
-          test-bot
+      - build-and-deploy:
+          requires:
+          - test-bot
