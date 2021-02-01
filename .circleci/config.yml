@@ -5,11 +5,12 @@ orbs:
 
 jobs:
   build-test-deploy:
-    docker:
-      - image: circleci/python:3.8.2  # primary container for the build job
-        auth:
-          username: polycole
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    # docker:
+    #   - image: circleci/python:3.8.2  # primary container for the build job
+    #     auth:
+    #       username: polycole
+    #       password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    machine: true
     steps:
       - checkout
       - run:
