@@ -8,6 +8,7 @@ __pycache__/
 
 # Wooglin Stuff
 models/*.tar.gz
+results/*
 
 .idea/
 resources/

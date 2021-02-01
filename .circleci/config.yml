@@ -4,7 +4,7 @@ orbs:
   slack: circleci/slack@4.1
 
 jobs:
-  build-test-deploy:
+  test-bot:
     docker:
       - image: circleci/python:3.8.2  # primary container for the build job
         auth:
@@ -13,7 +13,121 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Build and push Docker image to Heroku
+          name: Installing testing package requirements.
+          command: |
+            pip install -r testing_packages.txt
+      - run: 
+          name: Train rasa model & test
+          command: |
+            rasa train
+            rasa test
+      - run:
+          name: Check test results
+          command: |
+            output=`cat results/failed_test_stories.yml`
+            expected="# None of the test stories failed - all good!"
+            if [ "$output" != "$expected" ];
+            then
+                    printf "\n********Expected test result doesn't match********\n\n"
+                    printf "\n$output\n\n"
+                    exit 1
+            fi
+
+      - slack/notify:
+          channel: $SLACK_DEFAULT_CHANNEL
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Wooglin-bot test cases have completed *successfully* :large_green_circle:"
+                  }
+                }
+              ]
+            }
+          event: pass
+      - slack/notify:
+          channel: $SLACK_DEFAULT_CHANNEL
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": ":robot_face: Wooglin-bot Test Cases Failed :red_circle:",
+                    "emoji": true
+                  }
+                },
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Job*: ${CIRCLE_JOB}"
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Project*:\n$CIRCLE_PROJECT_REPONAME"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*When*:\n$(date +'%m/%d/%Y %T')"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Branch*:\n$CIRCLE_BRANCH"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Author*:\n$CIRCLE_USERNAME"
+                    }
+                  ],
+                  "accessory": {
+                    "type": "image",
+                    "image_url": "https://i.imgur.com/CXDfXUB.jpg",
+                    "alt_text": "Wooglin CI Failure Logo"
+                  }
+                },
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Mentions*:\n$SLACK_PARAM_MENTIONS"
+                    }
+                  ]
+                },
+                {
+                  "type": "actions",
+                  "elements": [
+                    {
+                      "type": "button",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "View Job"
+                      },
+                      "url": "${CIRCLE_BUILD_URL}"
+                    }
+                  ]
+                }
+              ]
+            }
+          event: fail
+
+  build-and-deploy:
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: Builds the Docker image and pushes it to Heroku
           command: |
             sudo curl https://cli-assets.heroku.com/install.sh | sh
             docker ps
@@ -154,6 +268,13 @@ jobs:
           event: fail
 
 workflows:
-  main:
+  build-test-and-deploy:
     jobs:
-      - build-test-deploy
+      - test-bot
+      - build-and-deploy:
+          filters:
+            branches:
+              only:
+                - main
+          requires:
+          - test-bot
