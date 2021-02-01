@@ -24,9 +24,10 @@ jobs:
       - run:
           name: Check test results
           command: |
+            cat results/failed_test_stories.yml
             output=`cat results/failed_test_stories.yml`
             expected="# None of the test stories failed - all good!"
-            if [ "$output" == "$expected" ];
+            if [ "$output" != "$expected" ];
             then
                     circleci-agent step halt
             fi
