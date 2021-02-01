@@ -271,5 +271,9 @@ workflows:
     jobs:
       - test-bot
       - build-and-deploy:
+          filters:
+            branches:
+              only:
+                - main
           requires:
           - test-bot
