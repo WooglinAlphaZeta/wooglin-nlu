@@ -21,6 +21,16 @@ jobs:
           command: |
             rasa train
             rasa test
+      - run:
+          name: Check test results
+          command: |
+            output=`cat failed_test_stories.yml`
+            expected="# None of the test stories failed - all good!"
+            if [ "$output" == "$expected" ];
+            then
+                    circleci-agent step halt
+            fi
+
       - slack/notify:
           channel: $SLACK_DEFAULT_CHANNEL
           custom: |
