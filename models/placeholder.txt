@@ -1,0 +1,1 @@
+Interestingly enough, Git doesn't allow empty folders. Since this folder is critical once we deploy (it's where the models are generated, stored, and accessed) we need to have this directory present! Hence this little file :) 
