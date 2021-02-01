@@ -13,11 +13,11 @@ jobs:
     steps:
       - checkout
       - run: |
-        pwd
-        ls -al
-        pip install rasa
-        rasa train
-        rasa test
+          pwd
+          ls -al
+          pip install rasa
+          rasa train
+          rasa test
 
   build-test-deploy:
     machine: true
