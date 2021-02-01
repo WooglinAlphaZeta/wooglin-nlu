@@ -7,13 +7,12 @@ jobs:
   test-bot:
     machine: true
     steps:
-      -checkout
-      -run:
-        name: Run specified test cases.
-        command: |
-          rasa train
-          rasa test
-
+      - checkout
+      - run:
+          name: Run specified test cases.
+          command: |
+            rasa train
+            rasa test
 
   build-and-deploy:
     # docker:
