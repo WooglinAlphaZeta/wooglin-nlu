@@ -12,12 +12,15 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
-      - run: |
-          pwd
-          ls -al
-          pip install rasa
-          rasa train
-          rasa test
+      - run:
+          name: Installing testing package requirements.
+          command: |
+            pip install -r testing_packages.txt
+      - run: 
+          name: Train rasa model & test
+          command: |
+            rasa train
+            rasa test
 
   build-test-deploy:
     machine: true
