@@ -4,7 +4,18 @@ orbs:
   slack: circleci/slack@4.1
 
 jobs:
-  build-test-deploy:
+  test-bot:
+    machine: true
+    steps:
+      -checkout
+      -run:
+        name: Run specified test cases.
+        command: |
+          rasa train
+          rasa test
+
+
+  build-and-deploy:
     # docker:
     #   - image: circleci/python:3.8.2  # primary container for the build job
     #     auth:
@@ -157,4 +168,5 @@ jobs:
 workflows:
   main:
     jobs:
-      - build-test-deploy
+      - test-bot
+      - build-and-deploy
