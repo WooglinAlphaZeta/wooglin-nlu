@@ -4,30 +4,17 @@ orbs:
   slack: circleci/slack@4.1
 
 jobs:
-  test-bot:
+  build-test-deploy:
     machine: true
     steps:
       - checkout
       - run:
-          name: Run specified test cases.
-          command: |
-            rasa train
-            rasa test
-
-  build-and-deploy:
-    # docker:
-    #   - image: circleci/python:3.8.2  # primary container for the build job
-    #     auth:
-    #       username: polycole
-    #       password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
-    machine: true
-    steps:
-      - checkout
-      - run:
-          name: Build and push Docker image to Heroku
+          name: Builds the image, tests the bot, and pushes the image to Heroku
           command: |
             sudo curl https://cli-assets.heroku.com/install.sh | sh
             docker ps
+            rasa train
+            rasa test
             HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:login
             HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push -a wooglin-bot web
             HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release -a wooglin-bot web
@@ -167,5 +154,4 @@ jobs:
 workflows:
   main:
     jobs:
-      - test-bot
-      - build-and-deploy
+      - build-test-deploy
