@@ -5,3 +5,5 @@
 ![CircleCI](https://img.shields.io/circleci/build/github/WooglinAlphaZeta/wooglin-bot/main?style=for-the-badge)
 <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/WooglinAlphaZeta/wooglin-bot?color=%20%23ff751a&style=for-the-badge">
 <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/WooglinAlphaZeta/wooglin-bot?style=for-the-badge">
+
+The Slack Bot Portion of Wooglin is written using Python, and the Rasa framework for chatbots. 
