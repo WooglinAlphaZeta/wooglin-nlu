@@ -19,8 +19,8 @@ jobs:
       - run: 
           name: Train rasa model & test
           command: |
-            rasa train
-            rasa test
+            rasa train nlu
+            rasa test nlu
       - run:
           name: Check test results
           command: |
