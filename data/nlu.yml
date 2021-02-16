@@ -9,17 +9,18 @@ nlu:
     - hello there
     - good morning
     - good evening
+    - good afternoon
     - moin
     - hey there
-    - let's go
     - hey dude
     - goodmorning
     - goodevening
-    - good afternoon
+    - what's up?
+    - what's new in your world?
+    - how's life?
 
 - intent: goodbye
   examples: |
-    - good afternoon
     - cu
     - good by
     - cee you later
@@ -30,6 +31,9 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - cya
+    - adios
+    - farewell
 
 - intent: affirm
   examples: |
