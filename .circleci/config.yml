@@ -132,8 +132,8 @@ jobs:
             sudo curl https://cli-assets.heroku.com/install.sh | sh
             docker ps
             HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:login
-            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push -a wooglin-bot web
-            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release -a wooglin-bot web
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push -a wooglin-nlu web
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release -a wooglin-nlu web
       - slack/notify:
           channel: $SLACK_DEFAULT_CHANNEL
           custom: |
