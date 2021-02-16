@@ -1,6 +1,3 @@
-# Wooglin NLU Stuff
-results/*
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -157,3 +154,4 @@ scripts/soberbros.csv
 scripts/temp_script.py
 
 scripts/.trainWit.py.swp
+/results/
