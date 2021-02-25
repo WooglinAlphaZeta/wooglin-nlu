@@ -1,0 +1,228 @@
+version: "2.0"
+nlu:
+
+  - synonym: Matt Bullock
+    examples: |
+        - Matthew Bullock
+        - Bullock
+
+  - synonym: Matt Clinton
+    examples: |
+        - Matthew Clinton
+        - Clinton
+
+  - synonym: Chris Lampsa
+    examples: |
+        - Christopher Lampsa
+        - Lamp
+
+  - synonym: Tom Oexeman
+    examples: |
+        - Thomas Oexeman
+        - Tombo
+
+  - synonym: Adam Snow
+    examples: |
+        - James Snow
+        - James Adam Snow
+
+  - synonym: Michael Wang
+    examples: |
+      - Wang
+
+  - synonym: Scott Chaplik
+    examples: |
+      - Scotty Chaplik
+
+  - synonym: Quinn Merrell
+    examples: |
+      - John Merrell
+      - John Quinn Merrell
+      - Quimbo
+
+  - synonym: Wil Griffin
+    examples: |
+      - Will Griffin
+
+  - synonym: JR Guz
+    examples: |
+        - Joseph Robert Guz
+        - RJ Gruz
+
+  - synonym: Matt Kalof
+    examples: |
+        - Matthew Kalof
+
+  - synonym: Matt Nichter
+    examples: |
+        - Matthew Nichter
+        - Chef Nichter
+
+  - synonym: Jason Paucar
+    examples: |
+      - JDP
+
+  - synonym: Max Smith
+    examples: |
+      - Maxwell Smith
+
+  - synonym: Mitch Woolston
+    examples: |
+        - Mitchell Woolston
+
+  - synonym: Elliot Dineen
+    examples: |
+      - Elliott Dineen
+      - Eliott Dineen
+
+  - synonym: Josh Feldman
+    examples: |
+        - Joshua Feldman
+
+  - synonym: Matt Rose
+    examples: |
+        - Matthew Rose
+
+  - synonym: JP Evans
+    examples: |
+        - John-Paul Evans
+        - John Paul Evans
+
+  - synonym: Garrett O'Brien
+    examples: |
+      - Garett O'Brien
+      - Garret O'Brien
+      - Garrett OBrien
+      - Garret OBrien
+      - Garett OBrien
+      - Garet O'Brien
+      - Garet OBrien
+
+  - synonym: Jacob Tedford
+    examples: |
+      - Teddy
+
+  - synonym: Giovanni Thompson
+    examples: |
+      - Gio Thompson
+
+  - synonym: Giovanni Fracasso
+    examples: |
+      - Gio Fraccasso
+      - Gio Fracasso
+      - Gio Fraccaso
+      - Gio Fracaso
+      - Giovanni Fracaso
+      - Giovanni Fraccaso
+
+  - synonym: Joey Massarelli
+    examples: |
+      - Joey Masarelli
+      - Joey Massareli
+      - Joey Masareli
+
+  - synonym: Phillip Powell
+    examples: |
+      - Philip Powell
+      - Phillip Powel
+
+  - lookup: member
+    examples: |
+      - Caleb Bruce
+      - Matt Bullock
+      - Riley Callahan
+      - Matt Clinton
+      - Deegan Coles
+      - Rex Fathauer
+      - Ryan Hyde
+      - Chris Lampsa
+      - Quinn Merrell
+      - Tom Oexeman
+      - Cole Polyak
+      - Evan Prechodko
+      - Alek Seballes
+      - Adam Snow
+      - Leif Soederberg
+      - Luke Srsen
+      - Ellis Stice
+      - Jack Thacher
+      - Michael Wang
+      - Austin Ahlers
+      - Crawford Asman
+      - Cade Carter
+      - Scotty Chaplik
+      - Grant Conner
+      - Robel Desta
+      - Noah Duran
+      - Brandon Ferguson
+      - Wil Griffin
+      - JR Guz
+      - Derrick Hicks
+      - Matt Kalof
+      - Justin Marciano
+      - Becket Mohns
+      - Matt Nichter
+      - Stew Olson
+      - Matt Oltmann
+      - Jason Paucar
+      - Winston Ross
+      - Max Smith
+      - Mitch Woolston
+      - Keanan Anderson
+      - David Blaufuss
+      - Jackson Brattain
+      - Elliot Dineen
+      - Josh Feldman
+      - Henry Herman
+      - Matt Rose
+      - Jake Samuels
+      - Craig Shellenberger
+      - Kyle Waggoner
+      - Brian Weir
+      - Kyle Bucholtz
+      - Griffin Carroll
+      - Henry Davis
+      - JP Evans
+      - Max Geohagen
+      - Gavin Hailey
+      - Jack Jenkins
+      - Cap Kelly
+      - Charlie Lemke-Bell
+      - Chris Nordlie
+      - Garrett O'Brien
+      - Aasal Rae
+      - Bradford Roberts
+      - Alex Tarpley
+      - Jacob Tedford
+      - Giovanni Thompson
+      - Max Whittaker
+      - Jack Briggs
+      - Giovanni Fracasso
+      - Kyle Llinas
+      - Xavier Zuvekas
+      - Alex Burton
+      - Andrew Chiala
+      - Kyle Huwaldt
+      - Joe Koss
+      - Joey Massarelli
+      - Phillip Powell
+      - Noah Schembri
+      - Preston Alexander
+      - Nicholas Brees
+      - Luke Brennan
+      - Billy Brown
+      - Ryan Considine
+      - Lucas Crowley
+      - Kenny Eddy
+      - Andrew Gusho
+      - Luke Johnson
+      - Jonah Kelley
+      - Taylor Loh
+      - Peter Marzo
+      - Jack McKinnon
+      - Charlie Podiak
+      - Joey Quintana
+      - Kipp Schaub
+      - Ethan Schwartz
+      - Dane Srsen
+      - Isaac Troxler
