@@ -2,7 +2,7 @@ version: "2.0"
 
 nlu:
 - intent: test
-    examples: |
+  examples: |
     - bobbadebool
 
 - intent: greet
