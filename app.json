@@ -3,10 +3,5 @@
   "description": "A barebones Rasa NLU server installation using Docker",
   "repository": "https://github.com/just-ai/rasa-heroku-template",
   "logo": "https://s3-us-west-2.amazonaws.com/spaceocanadawp/2019/12/rasa-framework.png",
-  "stack": "container",
-  "buildpacks": [
-    {
-      "url": "https://github.com/heroku/heroku-buildpack-python"
-    }
-  ]
+  "stack": "container"
 }
