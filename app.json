@@ -1,7 +1,7 @@
 {
-  "name": "Rasa NLU Heroku template",
-  "description": "A barebones Rasa NLU server installation using Docker",
-  "repository": "https://github.com/just-ai/rasa-heroku-template",
-  "logo": "https://s3-us-west-2.amazonaws.com/spaceocanadawp/2019/12/rasa-framework.png",
+  "name": "Wooglin NLU Engine",
+  "description": "The NLU server powering Wooglin.",
+  "repository": "https://github.com/WooglinAlphaZeta/wooglin-nlu",
+  "logo": "https://i.imgur.com/962Gazx.png",
   "stack": "container"
 }
