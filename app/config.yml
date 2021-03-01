@@ -25,7 +25,7 @@ pipeline:
   - name: ResponseSelector
     epochs: 100
     constrain_similarities: true
-    model_confidence: cosine
+    model_confidence: linear_norm
   - name: FallbackClassifier
     threshold: 0.3
     ambiguity_threshold: 0.1
