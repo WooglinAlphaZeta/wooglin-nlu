@@ -8,4 +8,8 @@
   <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/WooglinAlphaZeta/wooglin-nlu?style=for-the-badge">
 </span>
 
-The repository housing the Natural Language Understanding engine driving Wooglin's interpretation of user interaction. Driven by [Rasa conversational AI](https://rasa.com/). Original Heroku NLU Template provided by [this repository](https://github.com/just-ai/rasa-heroku-template). 
+### Introduction
+This repository houses the Natural Language Understanding engine that allows Wooglin to avoid having to rely on set slash commands in Slack. The NLU Engine makes it far easier for a user to interact with the bot, as they're able to simply speak as they would to a virtual assistant like Siri or Alexa, and still come to the intended results.
+
+### How It Works
+The NLU Engine is written using an open-source NLU Library called [Rasa](https://rasa.com/). Rasa makes writing training data, creating intents, and classifying entities incredibly easy, and also provides an exceptionally streamlined development process. The service itself is deployed using Heroku, linked to this very repository. 
